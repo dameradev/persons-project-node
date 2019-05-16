@@ -3,4 +3,24 @@
 <body>
   <%- include('../includes/navigation.ejs')%>
   <h1>List of Persons</h1>
+  <% persons.forEach(person => { %>
+    <ul>
+      <li>
+        <%= person.nickname %>
+      </li>
+      <li>
+        <%= person.first_name %>
+      </li>
+      <li>
+        <%= person.last_name %>
+      </li>
+      <li>
+        <%= person.birth_day %>
+      </li>
+      <li>
+        <%= person.height %>
+      </li>
+    </ul>
+  <% }); %>
+
 <%- include('../includes/end.ejs')%>

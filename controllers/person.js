@@ -2,10 +2,15 @@ const Person = require('../models/person');
 
 
 exports.getPersons = (req, res, next) => {
-  res.render('persons/persons-list', {
-    pageTitle: 'List of persons',
-    path: '/persons'
-  });
+  Person.findAll({})
+  .then(persons => {
+    res.render('persons/persons-list', {
+      persons,
+      pageTitle: 'List of persons',
+      path: '/persons'
+    });
+  })
+  .catch(err=>console.log(err));
 }
 
 
