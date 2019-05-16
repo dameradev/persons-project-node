@@ -7,4 +7,6 @@ router.get('/', personsController.getPersons);
 
 router.get('/create-person', personsController.getCreatePerson);
 
+router.post('/create-person', personsController.postCreatePerson);
+
 module.exports = router;

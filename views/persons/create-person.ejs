@@ -3,4 +3,19 @@
 <body>
   <%- include('../includes/navigation.ejs')%>
   <h1>Create a person</h1>
+  <form action="/persons/create-person" method="POST">
+    <label for="nickname">Nickname:</label>
+    <input type="text" name="nickname" id="nickname"><br>
+    <label for="first_name">First Name:</label>
+    <input type="text" name="first_name" id="first_name"><br>
+    <label for="last_name">Last Name:</label>
+    <input type="text" name="last_name" id="last_name"><br>
+    <label for="birth_day">Birthday:</label>
+    <input type="text" name="birth_day" id="birth_day"><br>
+    <label for="height">Height:</label>
+    <input type="number" name="height" id="height"><br>
+    <!-- <label for="gender">Gender:</label>
+    <input type="radio" name="gender" value=""> -->
+    <button type="submit">Create Person</button>
+  </form>
 <%- include('../includes/end.ejs')%>
