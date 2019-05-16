@@ -13,6 +13,20 @@ exports.getPersons = (req, res, next) => {
   .catch(err=>console.log(err));
 }
 
+exports.getPerson = (req, res, next) => {
+  Person
+    .findByPk(req.params.id)
+    .then(person => {
+      res.render('persons/person-details', {
+        person,
+        pageTitle: 'Details about a person',
+        path: '/persons'
+      });
+    })
+    .catch(err=>console.log(err));
+
+}
+
 
 exports.getCreatePerson = (req, res, next) => {
   res.render('persons/create-person', {

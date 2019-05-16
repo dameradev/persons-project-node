@@ -2,9 +2,7 @@
 </head>
 <body>
   <%- include('../includes/navigation.ejs')%>
-  <h1>List of Persons</h1>
-  <% persons.forEach(person => { %>
-    <a href="/persons/<%= person.id %>">
+  <h1>Details about a person</h1>
       <ul>
         <li>
           <%= person.nickname %>
@@ -23,6 +21,5 @@
         </li>
       </ul>
     </a>  
-  <% }); %>
 
 <%- include('../includes/end.ejs')%>
