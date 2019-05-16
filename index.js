@@ -7,6 +7,7 @@ const app = express();
 //MODELS
 const Person = require('./models/person');
 const Location = require('./models/location');
+const Contact = require('./models/contact');
 
 // ROUTES
 const personsRoutes =  require('./routes/person');
@@ -27,6 +28,9 @@ app.use('/persons',  personsRoutes);
 Person.belongsTo(Location);
 Location.hasMany(Person);
 
+Contact.belongsTo(Person);
+Person.hasMany(Contact);
+
 
 sequalize.sync()
   .then(() => { 
@@ -46,6 +50,22 @@ sequalize.sync()
        });
      }
      return location;
+   })
+   .then(() => { 
+    return Person.findByPk(1);
+   })
+   .then(person => {
+     if (!person) {
+       Person.create({
+         nickname: 'dame',
+         first_name: 'Damjan',
+         last_name: 'Radev',
+         birth_day: new Date(),
+         height: 192,
+         locationId: 1
+       });
+     }
+     return person;
    })
   .then(()=>app.listen(3000))
   .catch(err=>console.log(err));

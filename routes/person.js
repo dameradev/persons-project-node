@@ -9,8 +9,13 @@ router.get('/', personsController.getPersons);
 
 router.get('/create-person', personsController.getCreatePerson);
 
-router.get('/:id', personsController.getPerson);
 
 router.post('/create-person', personsController.postCreatePerson);
+
+router.get('/:id', personsController.getPerson);
+
+router.get('/:id/create-contact', personsController.getCreateContact)
+
+router.post('/:id/create-contact', personsController.postCreateContact)
 
 module.exports = router;

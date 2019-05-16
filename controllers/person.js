@@ -1,5 +1,6 @@
 const Person = require('../models/person');
 const Location = require('../models/location');
+const Contact = require('../models/contact');
 
 exports.getPersons = async(req, res, next) => {
   const persons = await Person.findAll({});
@@ -26,7 +27,6 @@ exports.getPerson = (req, res, next) => {
       });
     })
     .catch(err=>console.log(err));
-
 }
 
 
@@ -59,6 +59,30 @@ exports.postCreatePerson = (req, res, next) => {
   }).then(result => {
     console.log('Created a person!');
     res.redirect('/persons')
+  })
+  .catch(err=>console.log(err));
+}
+
+
+exports.getCreateContact = async (req, res, next) => {
+  const person = await Person.findByPk(req.params.id);
+
+  res.render('persons/create-contact', {
+    person,
+    pageTitle: 'Create a contact',
+    path: '/persons'
+  })
+}
+
+exports.postCreateContact = async (req, res, next) => {
+  const contact = req.body.contact;
+  const person = await Person.findByPk(req.params.id);
+  person.createContact({
+    contact
+  })
+  .then(result => {
+    console.log('Created a contact')
+    res.redirect('/persons');
   })
   .catch(err=>console.log(err));
 }
