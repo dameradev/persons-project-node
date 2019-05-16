@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
-const personsRoutes =  require('./routes/persons');
+const personsRoutes =  require('./routes/person');
 
 
 app.set('view engine', 'ejs');
