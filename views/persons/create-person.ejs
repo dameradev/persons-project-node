@@ -15,7 +15,6 @@
     <label for="height">Height:</label>
     <input type="number" name="height" id="height"><br>
     <select name="locationId">
-      <option value="">Unknown address</option>
       <% locations.forEach(location => { %>
       <option value="<%= location.id %>">
           <%= location.country %>, <%= location.street_name %>, <%= location.street_number %>

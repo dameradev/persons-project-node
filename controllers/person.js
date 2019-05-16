@@ -1,16 +1,18 @@
 const Person = require('../models/person');
 const Location = require('../models/location');
 
-exports.getPersons = (req, res, next) => {
-  Person.findAll({})
-  .then(persons => {
-    res.render('persons/persons-list', {
-      persons,
-      pageTitle: 'List of persons',
-      path: '/persons'
-    });
-  })
-  .catch(err=>console.log(err));
+exports.getPersons = async(req, res, next) => {
+  const persons = await Person.findAll({});
+  const locations = await Location.findAll({});
+
+  res.render('persons/persons-list', {
+    persons,
+    locations,
+    pageTitle: 'List of persons',
+    path: '/persons'
+  });
+
+  
 }
 
 exports.getPerson = (req, res, next) => {

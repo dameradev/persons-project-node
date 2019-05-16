@@ -22,7 +22,10 @@
           <%= person.height %>
         </li>
         <li>
-          <%= person.locationId %>
+          <%= locations[person.locationId -1].get().city %>
+        </li>
+        <li>
+          <%= locations.person %>
         </li>
       </ul>
     </a>  
