@@ -29,6 +29,24 @@ Location.hasMany(Person);
 
 
 sequalize.sync()
+  .then(() => { 
+    return Location.findByPk(1);
+   })
+   .then(location => {
+     if (!location) {
+       Location.create({
+         city: 'Brno',
+         street_name: 'Kohutova',
+         street_number: '3',
+         zip: '60014',
+         country: 'Czezh Republic',
+         name: 'Dormitory',
+         latitude: '49.216080',
+         longitude: '16.631370',
+       });
+     }
+     return location;
+   })
   .then(()=>app.listen(3000))
   .catch(err=>console.log(err));
 

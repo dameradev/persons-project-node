@@ -1,5 +1,5 @@
 const Person = require('../models/person');
-
+const Location = require('../models/location');
 
 exports.getPersons = (req, res, next) => {
   Person.findAll({})
@@ -29,10 +29,15 @@ exports.getPerson = (req, res, next) => {
 
 
 exports.getCreatePerson = (req, res, next) => {
-  res.render('persons/create-person', {
-    pageTitle: 'Create a person',
-    path: '/create-person'
-  });
+  return Location.findAll({})
+  .then(locations => {
+    res.render('persons/create-person', {
+      locations,
+      pageTitle: 'Create a person',
+      path: '/create-person'
+    });
+  })
+  .catch(err=>console.log(err));
 }
 
 exports.postCreatePerson = (req, res, next) => {
@@ -41,12 +46,14 @@ exports.postCreatePerson = (req, res, next) => {
   const last_name = req.body.last_name;
   const birth_day = req.body.birth_day;
   const height = req.body.height;
+  const locationId = req.body.locationId;
   Person.create({
     nickname,
     first_name,
     last_name,
     birth_day,
-    height
+    height,
+    locationId
   }).then(result => {
     console.log('Created a person!');
     res.redirect('/persons')

@@ -14,6 +14,16 @@
     <input type="text" name="birth_day" id="birth_day"><br>
     <label for="height">Height:</label>
     <input type="number" name="height" id="height"><br>
+    <select name="locationId">
+      <option value="">Unknown address</option>
+      <% locations.forEach(location => { %>
+      <option value="<%= location.id %>">
+          <%= location.country %>, <%= location.street_name %>, <%= location.street_number %>
+      </option>
+      <% }) %>
+    </select><br>
+    
+
     <!-- <label for="gender">Gender:</label>
     <input type="radio" name="gender" value=""> -->
     <button type="submit">Create Person</button>
