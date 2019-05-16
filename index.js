@@ -6,6 +6,7 @@ const app = express();
 
 //MODELS
 const Person = require('./models/person');
+const Location = require('./models/location');
 
 // ROUTES
 const personsRoutes =  require('./routes/person');
@@ -22,6 +23,9 @@ app.use(bodyParser.urlencoded({extended: false}))
 
 app.use('/persons',  personsRoutes);
 
+
+Person.belongsTo(Location);
+Location.hasMany(Person);
 
 
 sequalize.sync()
