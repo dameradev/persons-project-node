@@ -13,11 +13,14 @@ exports.getMeetings = async (req, res, next) => {
 exports.getMeeting = async (req, res, next) => { 
   const meeting = await Meeting.findByPk(req.params.id);
   const persons = await Person.findAll({});
+  const peopleAttending = await meeting.getPeople();
+  
   res.render('meetings/meeting-details', {
     pageTitle: 'Meeting - Details',
     path: 'meetings',
     meeting,
-    persons
+    persons,
+    peopleAttending
   });
 }
 

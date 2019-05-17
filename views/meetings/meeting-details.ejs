@@ -6,7 +6,10 @@
     <hr>
     <p>Starting time: <%= meeting.start %></p>
     <p>Duration: <%= meeting.duration %></p>
-  
+    <h3>People attending the event</h3>
+    <% peopleAttending.forEach(person => { %>
+      <p><%= person.first_name %>, <%= person.last_name %></p>
+    <% }) %>
 
     <h5>Add people to this meeting</h5>
     <form action="/meetings/add-person" method="POST">
