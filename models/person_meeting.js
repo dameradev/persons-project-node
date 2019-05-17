@@ -5,10 +5,10 @@ const sequelize = require('../helpers/database');
 const PersonMeeting = sequelize.define('personMeeting', {
   id: {
     type: Sequelize.INTEGER,
-    autoIncrement: true,
-    allowNull:false,
-    primaryKey: true
-  }
+    primaryKey: true,
+    allowNull: false,
+    autoIncrement: true
+  },
 });
 
 module.exports = PersonMeeting;

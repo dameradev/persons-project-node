@@ -1,0 +1,23 @@
+<%- include('../includes/head.ejs')%>
+</head>
+<body>
+  <%- include('../includes/navigation.ejs')%>
+    <h3>Details about the meeting: <%= meeting.description %></h3>
+    <hr>
+    <p>Starting time: <%= meeting.start %></p>
+    <p>Duration: <%= meeting.duration %></p>
+  
+
+    <h5>Add people to this meeting</h5>
+    <form action="/meetings/add-person" method="POST">
+      <select name="personId">
+        <% persons.forEach(person => { %>
+        <option value="<%= person.id %>">
+            <%= person.first_name %>, <%= person.last_name %>
+        </option>
+        <% }) %>
+      </select><br>
+      <input type="hidden" name="meeting" id="meeting" value="<%= meeting.id %>"> 
+      <button type="submit" >Add person to meeting</button>
+    </form>
+<%- include('../includes/end.ejs')%>

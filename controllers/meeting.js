@@ -1,4 +1,5 @@
 const Meeting = require('../models/meeting');
+const Person = require('../models/person');
 
 exports.getMeetings = async (req, res, next) => {
   const meetings = await Meeting.findAll({});
@@ -7,6 +8,25 @@ exports.getMeetings = async (req, res, next) => {
     path:'/meetings',
     meetings
   });
+}
+
+exports.getMeeting = async (req, res, next) => { 
+  const meeting = await Meeting.findByPk(req.params.id);
+  const persons = await Person.findAll({});
+  res.render('meetings/meeting-details', {
+    pageTitle: 'Meeting - Details',
+    path: 'meetings',
+    meeting,
+    persons
+  });
+}
+
+exports.postAddPerson = async (req, res, next) => { 
+  const meeting = await Meeting.findByPk(req.body.meeting);
+  const person = await Person.findByPk(req.body.personId);
+  
+  await meeting.addPerson(person)
+  res.redirect('/meetings')
 }
 
 exports.getCreateMeeting = (req, res, next) => {
