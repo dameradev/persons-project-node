@@ -68,8 +68,8 @@ sequalize.sync()
      if (!person) {
        Person.create({
          nickname: 'dame',
-         first_name: 'Damjan',
-         last_name: 'Radev',
+         first_name: 'Mirko',
+         last_name: 'Nadzakov',
          birth_day: new Date(),
          height: 192,
          locationId: 1

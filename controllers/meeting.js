@@ -29,7 +29,7 @@ exports.postAddPerson = async (req, res, next) => {
   const person = await Person.findByPk(req.body.personId);
   
   await meeting.addPerson(person)
-  res.redirect('/meetings')
+  res.redirect(`/meetings/${meeting.id}`)
 }
 
 exports.getCreateMeeting = (req, res, next) => {
