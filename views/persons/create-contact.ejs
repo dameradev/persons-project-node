@@ -5,11 +5,12 @@
     <div class="container">
     <h1>Create a contact for <%= person.first_name %> <%= person.last_name%></h1>
     <form action="/persons/<%=person.id%>/create-contact" method="POST">
-      <label for="contact">Name of contact:</label>
-      <input type="text" name="contact" id="contact"><br>
-
-      
-      <button type="submit">Create Contact</button>
+        <div class="form-group">
+            <label for="contact">Name of contact:</label>
+            <input type="text" name="contact" id="contact" class="form-control">
+        </div>
+      <button type="submit" class="btn btn-primary create-person-button">Create a Contact</button>
     </form>
+  
   </div>
 <%- include('../includes/end.ejs')%></br>

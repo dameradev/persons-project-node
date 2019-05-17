@@ -19,7 +19,7 @@
                   <p class="card-text">Height: <%= person.height %></p>
                   <p class="card-text">Location: <%= locations[person.locationId -1].get().city %></p>
                   
-                  <a href="#" class="card-link">Another link</a>
+                  <a href="/persons/<%= person.id %>" class="card-link">View more..</a>
                 </div>
               </div>
           </div>
