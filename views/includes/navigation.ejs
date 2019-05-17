@@ -1,6 +1,22 @@
-<nav>
-  <a href="/persons">List of Persons</a>
-  <a href="/persons/create-person">Create a Person</a>
-  <a href="/meetings">List of meetings</a>
-  <a href="/meetings/create-meeting">Create a Meeting</a>
+<nav class="navbar navbar-expand-md navbar-light bg-light container-fluid">
+  <div class="container">
+    <a class="navbar-brand" href="/persons">List of Persons</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+     <ul class="navbar-nav ml-auto">
+      <li class="nav-item list-item">
+        <a class="nav-link" href="/meetings">List of meetings</a>
+      </li>
+        <li class="nav-item">
+          <a class="btn btn-outline-success my-2 my-sm-0 action-btn" href="/meetings/create-meeting">Create a Meeting</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-outline-success my-2 my-sm-0 action-btn" href="/persons/create-person">Create a Person</a>
+        </li>
+     </ul>
+    </div>
+  </div>
 </nav>

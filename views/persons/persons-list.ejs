@@ -1,34 +1,37 @@
 <%- include('../includes/head.ejs')%>
 </head>
-<body>
-  <%- include('../includes/navigation.ejs')%>
-  <h1>List of Persons</h1>
-  <% persons.forEach(person => { %>
-    <a href="/persons/<%= person.id %>">
-      <ul>
-        <li>
-          <%= person.nickname %>
-        </li>
-        <li>
-          <%= person.first_name %>
-        </li>
-        <li>
-          <%= person.last_name %>
-        </li>
-        <li>
-          <%= person.birth_day %>
-        </li>
-        <li>
-          <%= person.height %>
-        </li>
-        <li>
-          <%= locations[person.locationId -1].get().city %>
-        </li>
-        <li>
-          <%= locations.person %>
-        </li>
-      </ul>
-    </a>  
-  <% }); %>
 
+<body class="container-fluid">
+<%- include('../includes/navigation.ejs')%>
+<div class="container">
+    
+    <h1>List of Persons</h1>
+    <% persons.forEach(person => { %>
+      <a href="/persons/<%= person.id %>">
+        <ul>
+          <li>
+            <%= person.nickname %>
+          </li>
+          <li>
+            <%= person.first_name %>
+          </li>
+          <li>
+            <%= person.last_name %>
+          </li>
+          <li>
+            <%= person.birth_day %>
+          </li>
+          <li>
+            <%= person.height %>
+          </li>
+          <li>
+            <%= locations[person.locationId -1].get().city %>
+          </li>
+          <li>
+            <%= locations.person %>
+          </li>
+        </ul>
+      </a>  
+    <% }); %>
+</div>    
 <%- include('../includes/end.ejs')%>

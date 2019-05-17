@@ -1,27 +1,28 @@
 <%- include('../includes/head.ejs')%>
 </head>
-<body>
+<body class="container-fluid">
   <%- include('../includes/navigation.ejs')%>
-  <h1>Details about a person</h1>
-      <ul>
-        <li>
-          <%= person.nickname %>
-        </li>
-        <li>
-          <%= person.first_name %>
-        </li>
-        <li>
-          <%= person.last_name %>
-        </li>
-        <li>
-          <%= person.birth_day %>
-        </li>
-        <li>
-          <%= person.height %>
-        </li>
-      </ul>
-    </a>  
+  <div class="container">
+    <h1>Details about a person</h1>
+        <ul>
+          <li>
+            <%= person.nickname %>
+          </li>
+          <li>
+            <%= person.first_name %>
+          </li>
+          <li>
+            <%= person.last_name %>
+          </li>
+          <li>
+            <%= person.birth_day %>
+          </li>
+          <li>
+            <%= person.height %>
+          </li>
+        </ul>
+      </a>  
 
-    <a href="/persons/<%= person.id %>/create-contact">Create a contact</a>
-
+      <a href="/persons/<%= person.id %>/create-contact">Create a contact</a>
+  </div>
 <%- include('../includes/end.ejs')%>

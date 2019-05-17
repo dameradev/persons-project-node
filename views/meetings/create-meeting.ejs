@@ -1,7 +1,8 @@
 <%- include('../includes/head.ejs')%>
 </head>
-<body>
+<body class="container-fluid">
   <%- include('../includes/navigation.ejs')%>
+  <div class='container'>
   <h1>Create a meeting</h1>
   <form action="/meetings/create-meeting" method="POST">
     <label for="start">Starting time</label>
@@ -16,4 +17,5 @@
     
     <button type="submit">Create Meeting</button>
   </form>
+</div>
 <%- include('../includes/end.ejs')%></br>
