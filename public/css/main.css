@@ -1,3 +1,6 @@
+.navigation-bar {
+  margin-bottom: 3rem;
+}
 .action-btn {
   margin-left: 1rem;
   margin-right:1rem;
@@ -13,6 +16,13 @@
   margin-top:1rem;
 }
 
-.meeting-details-card {
-  margin-top:3rem;
+@media only screen and (min-width: 1024px) {
+  .custom-center {
+    margin-left: 18rem;
+    margin-right: 18rem;
+  }
 }
+
+/* .meeting-details-card {
+  margin-top:3rem;
+} */

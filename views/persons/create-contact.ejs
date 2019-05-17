@@ -3,13 +3,15 @@
 <body class="container-fluid">
   <%- include('../includes/navigation.ejs')%>
     <div class="container">
-    <h1>Create a contact for <%= person.first_name %> <%= person.last_name%></h1>
-    <form action="/persons/<%=person.id%>/create-contact" method="POST">
-        <div class="form-group">
-            <label for="contact">Name of contact:</label>
-            <input type="text" name="contact" id="contact" class="form-control">
-        </div>
-      <button type="submit" class="btn btn-primary create-person-button">Create a Contact</button>
-    </form>
+      <div class="text-center custom-center">
+          <h1>Create a contact for <%= person.first_name %> <%= person.last_name%></h1>
+          <form action="/persons/<%=person.id%>/create-contact" method="POST">
+              <div class="form-group">
+                  <label for="contact">Name of contact:</label>
+                  <input type="text" name="contact" id="contact" class="form-control">
+              </div>
+            <button type="submit" class="btn btn-primary create-person-button">Create a Contact</button>
+          </form>
+      </div>
   </div>
 <%- include('../includes/end.ejs')%></br>
