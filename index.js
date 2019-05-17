@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const sequalize = require('./helpers/database');
+const path = require('path');
 
 const app = express();
 
@@ -21,7 +22,7 @@ app.set('views', 'views');
 
 
 app.use(bodyParser.urlencoded({extended: false}))
-
+app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use('/persons',  personsRoutes);
