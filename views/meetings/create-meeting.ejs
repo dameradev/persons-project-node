@@ -3,11 +3,17 @@
 <body>
   <%- include('../includes/navigation.ejs')%>
   <h1>Create a meeting</h1>
-  <!-- <form action="/meetings/create-meeting" method="POST">
-    <label for="contact">Name of contact:</label>
-    <input type="text" name="contact" id="contact"><br>
+  <form action="/meetings/create-meeting" method="POST">
+    <label for="start">Starting time</label>
+    <input type="time" name="start" id="start"><br>
 
+    <label for="duration">Duration</label>
+    <input type="time" name="duration" id="duration"><br>
+
+    <label for="description">Description</label>
+    <input type="textarea" name="description" id="description"><br>
     
-    <button type="submit">Create Contact</button>
-  </form> -->
+    
+    <button type="submit">Create Meeting</button>
+  </form>
 <%- include('../includes/end.ejs')%></br>
