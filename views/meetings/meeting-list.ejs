@@ -6,9 +6,18 @@
     
     <h1>List of Meetings</h1>
     <% meetings.forEach(meeting => { %>
-      <a href="/meetings/<%= meeting.id %>"><h3>Details about the meeting: <%= meeting.description %></h3></a>
-      <p>Starting time: <%= meeting.start %></p>
-      <p>Duration: <%= meeting.duration %></p>
+      <div class="card">
+          <h5 class="card-header">Important Meeting</h5>
+          <div class="card-body">
+            <h5 class="card-title"><h3>Title: <%= meeting.description %></h3></h5>
+            <p class="card-text">Starting time: <%= meeting.start %></p>
+            <p class="card-text"><p>Duration: <%= meeting.duration %></p></p>
+            <a href="/meetings/<%= meeting.id %>" class="btn btn-primary">Read more..</a>
+          </div>
+        </div>
+      
+      <p></p>
+      
     <% }) %>
   </div>
 <%- include('../includes/end.ejs')%>
