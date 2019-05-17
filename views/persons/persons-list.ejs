@@ -6,32 +6,24 @@
 <div class="container">
     
     <h1>List of Persons</h1>
+    <div class="row">
     <% persons.forEach(person => { %>
-      <a href="/persons/<%= person.id %>">
-        <ul>
-          <li>
-            <%= person.nickname %>
-          </li>
-          <li>
-            <%= person.first_name %>
-          </li>
-          <li>
-            <%= person.last_name %>
-          </li>
-          <li>
-            <%= person.birth_day %>
-          </li>
-          <li>
-            <%= person.height %>
-          </li>
-          <li>
-            <%= locations[person.locationId -1].get().city %>
-          </li>
-          <li>
-            <%= locations.person %>
-          </li>
-        </ul>
-      </a>  
+      
+          <div class="col-sm card-wrapper">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title"> <%= person.first_name %> <%= person.last_name %> </h5>
+                  <h6 class="card-subtitle mb-2 text-muted">nickname: <%= person.nickname %></h6>
+        
+                  <p class="card-text">Birthday: <%= person.birth_day.getDate() %>.<%= person.birth_day.getMonth() %>.<%= person.birth_day.getYear() +1900 %></p>
+                  <p class="card-text">Height: <%= person.height %></p>
+                  <p class="card-text">Location: <%= locations[person.locationId -1].get().city %></p>
+                  
+                  <a href="#" class="card-link">Another link</a>
+                </div>
+              </div>
+          </div>
     <% }); %>
+  </div>
 </div>    
 <%- include('../includes/end.ejs')%>

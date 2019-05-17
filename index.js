@@ -63,7 +63,7 @@ sequalize.sync()
      return location;
    })
    .then(() => { 
-    return Person.findByPk(1);
+    return Person.findOne({ where: {nickname: 'dame'} });
    })
    .then(person => {
      if (!person) {

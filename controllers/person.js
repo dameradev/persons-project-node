@@ -5,6 +5,7 @@ const Contact = require('../models/contact');
 exports.getPersons = async(req, res, next) => {
   const persons = await Person.findAll({});
   const locations = await Location.findAll({});
+  
 
   res.render('persons/persons-list', {
     persons,
