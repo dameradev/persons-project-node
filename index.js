@@ -8,6 +8,8 @@ const app = express();
 const Person = require('./models/person');
 const Location = require('./models/location');
 const Contact = require('./models/contact');
+const Meeting = require('./models/meeting');
+const PersonMeeting = require('./models/person_meeting');
 
 // ROUTES
 const personsRoutes =  require('./routes/person');
@@ -30,6 +32,13 @@ Location.hasMany(Person);
 
 Contact.belongsTo(Person);
 Person.hasMany(Contact);
+
+Meeting.belongsTo(Location);
+Location.hasMany(Meeting);
+
+Meeting.belongsToMany(Person, { through: PersonMeeting });
+Person.belongsToMany(Meeting, { through: PersonMeeting });
+
 
 
 sequalize.sync()
