@@ -13,7 +13,7 @@ const PersonMeeting = require('./models/person_meeting');
 
 // ROUTES
 const personsRoutes =  require('./routes/person');
-
+const meetingsRoutes = require('./routes/meeting');
 
 app.set('view engine', 'ejs');
 app.set('views', 'views');
@@ -25,6 +25,7 @@ app.use(bodyParser.urlencoded({extended: false}))
 
 
 app.use('/persons',  personsRoutes);
+app.use('/meetings', meetingsRoutes);
 
 
 Person.belongsTo(Location);
