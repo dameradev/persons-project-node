@@ -4,29 +4,43 @@
   <%- include('../includes/navigation.ejs')%>
   <div class="container">
     <h1>Create a person</h1>
-    <form action="/persons/create-person" method="POST">
-      <label for="nickname">Nickname:</label>
-      <input type="text" name="nickname" id="nickname"><br>
-      <label for="first_name">First Name:</label>
-      <input type="text" name="first_name" id="first_name"><br>
-      <label for="last_name">Last Name:</label>
-      <input type="text" name="last_name" id="last_name"><br>
-      <label for="birth_day">Birthday:</label>
-      <input type="text" name="birth_day" id="birth_day"><br>
-      <label for="height">Height:</label>
-      <input type="number" name="height" id="height"><br>
-      <select name="locationId">
-        <% locations.forEach(location => { %>
-        <option value="<%= location.id %>">
-            <%= location.country %>, <%= location.street_name %>, <%= location.street_number %>
-        </option>
-        <% }) %>
-      </select><br>
+    <form>
+        <div class="form-group">
+            <label for="nickname">Nickname:</label>
+            <input type="text" name="nickname" id="nickname"class="form-control"  placeholder="example: johndoe">
+        </div>
+        <div class="form-group">
+            <label for="first_name">First Name:</label>
+            <input type="text" name="first_name" id="first_name" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="last_name">Last Name:</label>
+          <input type="text" name="last_name" id="last_name" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="birth_day">Birthday:</label>
+          <input type="text" name="birth_day" id="birth_day" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="height">Height:</label>
+          <input type="number" name="height" id="height" class="form-control">     
+        </div>
+        <div class="form-group">
+          <label for="location">Choose a location</label>
+        
+          <select class="form-control" id="location" name="locationId">
+            <% locations.forEach(location => { %>
+              <option value="<%= location.id %>">
+                  <%= location.country %>, <%= location.street_name %>, <%= location.street_number %>
+              </option>
+            <% }) %>
+          </select>
+        
       
 
       <!-- <label for="gender">Gender:</label>
       <input type="radio" name="gender" value=""> -->
-      <button type="submit">Create Person</button>
+      <button type="submit" class="btn btn-primary create-person-button">Create Person</button>
     </form>
   </div>
 <%- include('../includes/end.ejs')%>
