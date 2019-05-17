@@ -3,26 +3,38 @@
 <body class="container-fluid">
   <%- include('../includes/navigation.ejs')%>
   <div class="container">
-      <h3>Details about the meeting: <%= meeting.description %></h3>
-      <hr>
-      <p>Starting time: <%= meeting.start %></p>
-      <p>Duration: <%= meeting.duration %></p>
-      <h3>People attending the event</h3>
-      <% peopleAttending.forEach(person => { %>
-        <p><%= person.first_name %>, <%= person.last_name %></p>
-      <% }) %>
 
-      <h5>Add people to this meeting</h5>
-      <form action="/meetings/add-person" method="POST">
-        <select name="personId">
-          <% persons.forEach(person => { %>
-          <option value="<%= person.id %>">
-              <%= person.first_name %>, <%= person.last_name %>
-          </option>
-          <% }) %>
-        </select><br>
-        <input type="hidden" name="meeting" id="meeting" value="<%= meeting.id %>"> 
-        <button type="submit" >Add person to meeting</button>
-      </form>
-  </div>  
+      <div class="card text-center meeting-details-card">
+          <div class="card-header">
+            Meeting Details
+          </div>
+          
+          <div class="card-body">
+            <h5 class="card-title"><%= meeting.description %></h5>
+            <p class="card-text">Starting time: <%= meeting.start %></p>
+            <p class="card-text">Duration: <%= meeting.duration %></p>
+            <h3>People attending the event</h3>
+            <% peopleAttending.forEach(person => { %>
+              <a href="/persons/<%=person.id%>"><p class='card-text badge badge-secondary'><%= person.first_name %>, <%= person.last_name %></p></a>
+            <% }) %>
+            
+          </div>
+          <div class="card-footer text-muted">
+              <h5>Add people to this meeting</h5>
+              <form action="/meetings/add-person" method="POST">
+                <select name="personId" class="form-control">
+                  <% persons.forEach(person => { %>
+                  <option value="<%= person.id %>">
+                      <%= person.first_name %>, <%= person.last_name %>
+                  </option>
+                  <% }) %>
+                </select><br>
+                <input type="hidden" name="meeting" id="meeting" value="<%= meeting.id %>"> 
+                <button type="submit"  class="btn btn-outline-success">Add person to meeting</button>
+              </form>
+          </div>  
+          </div>
+        </div>
+
+     
 <%- include('../includes/end.ejs')%>
