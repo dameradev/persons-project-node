@@ -86,3 +86,11 @@ exports.postCreateContact = async (req, res, next) => {
   })
   .catch(err=>console.log(err));
 }
+
+exports.deletePerson = async (req, res, next) => {
+  const person = await Person.findByPk(req.params.id);
+
+  await person.destroy();
+
+  res.redirect('/persons');
+}

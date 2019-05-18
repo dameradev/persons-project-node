@@ -16,6 +16,10 @@
   margin-top:1rem;
 }
 
+.margin-right {
+  margin-right:1rem; 
+}
+
 @media only screen and (min-width: 1024px) {
   .custom-center {
     margin-left: 18rem;

@@ -63,12 +63,12 @@ sequalize.sync()
      return location;
    })
    .then(() => { 
-    return Person.findOne({ where: {nickname: 'dame'} });
+    return Person.findOne({ where: {nickname: 'mirko'} });
    })
    .then(person => {
      if (!person) {
        Person.create({
-         nickname: 'dame',
+         nickname: 'mirko',
          first_name: 'Mirko',
          last_name: 'Nadzakov',
          birth_day: new Date(),

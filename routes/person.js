@@ -18,4 +18,7 @@ router.get('/:id/create-contact', personsController.getCreateContact)
 
 router.post('/:id/create-contact', personsController.postCreateContact)
 
+router.get('/:id/delete', personsController.deletePerson)
+
+
 module.exports = router;
