@@ -10,8 +10,8 @@
           <h5 class="card-header">Important Meeting</h5>
           <div class="card-body">
             <h5 class="card-title"><h3>Title: <%= meeting.description %></h3></h5>
-            <p class="card-text">Starting time: <%= meeting.start %></p>
-            <p class="card-text"><p>Duration: <%= meeting.duration %></p></p>
+            <p class="card-text">Starting time: <%= meeting.start.getDate() %>.<%= meeting.start.getMonth() %>.<%= meeting.start.getFullYear() %> at <%= meeting.start.getHours() %>h </p>
+            <p class="card-text"><p>Duration: <%= meeting.duration %>h</p></p>
             <a href="/meetings/<%= meeting.id %>" class="btn btn-primary">Read more..</a>
           </div>
         </div>

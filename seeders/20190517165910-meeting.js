@@ -6,25 +6,25 @@ module.exports = {
       return queryInterface.bulkInsert('meetings', [{
         start: new Date(),
         description: "PHP programming conference",
-        duration: 8,
+        duration: 60000,
         locationId:1
       },
       {
         start: new Date(),
         description: "JavaScript basics",
-        duration: 4,
+        duration: 30000,
         locationId:1
       },
       {
         start: new Date(),
         description: "JavaScript ES6 Syntax",
-        duration: 10,
+        duration: 20000,
         locationId:1
       },
       {
         start: new Date(),
         description: "Using bootstrap",
-        duration: 2,
+        duration: 40000,
         locationId:1
       }], {});
     

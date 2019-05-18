@@ -9,7 +9,7 @@ const Meeting = sequelize.define('meeting', {
     allowNull:false,
     primaryKey: true
   },
-  start: Sequelize.TIME,
+  start: Sequelize.DATE,
   description: Sequelize.STRING,
   duration: Sequelize.TIME
 });

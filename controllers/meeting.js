@@ -16,7 +16,7 @@ exports.getMeeting = async (req, res, next) => {
   const persons = await Person.findAll({});
   const peopleAttending = await meeting.getPeople();
   const location = await Location.findByPk(meeting.locationId);
-  console.log('LOCATION:', location);
+  
   res.render('meetings/meeting-details', {
     pageTitle: 'Meeting - Details',
     path: '/meetings',

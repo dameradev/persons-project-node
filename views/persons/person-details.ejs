@@ -14,7 +14,7 @@
       <div class="card-body">
         <h5 class="card-title"><%= person.first_name %> <%= person.last_name %></h5>
         <p class="card-text">Nickname: <%= person.nickname %></p>
-        <p class="card-text">Birthday: <%= person.birth_day.getDate() %>.<%= person.birth_day.getMonth() %>.<%= person.birth_day.getYear() +1900 %></p>
+        <p class="card-text">Birthday: <%= person.birth_day.getDate() %>.<%= person.birth_day.getMonth() %>.<%= person.birth_day.getFullYear() %></p>
         <p class="card-text">Height: <%= person.height %></p>
         <p class="card-text">Location: <%= location.country %></p>
         
