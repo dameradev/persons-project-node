@@ -11,6 +11,8 @@ router.post('/create-meeting', meetingsController.postCreateMeeting);
 
 router.post('/add-person', meetingsController.postAddPerson);
 
+router.get('/:meetingId/people/:personId/delete', meetingsController.removePerson);
+
 router.get('/:id', meetingsController.getMeeting);
 
 

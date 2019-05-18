@@ -16,7 +16,13 @@
             <p class="card-text">Duration: <%= meeting.duration %></p>
             <h3>People attending the event</h3>
             <% peopleAttending.forEach(person => { %>
-              <a href="/persons/<%=person.id%>"><p class='card-text badge badge-secondary'><%= person.first_name %>, <%= person.last_name %></p></a>
+              <p class='card-text badge badge-secondary meeting-cart-person'>
+                  
+                <a href="/persons/<%=person.id%>">
+                  <%= person.first_name %>, <%= person.last_name %>
+                </a>
+                <a href="/meetings/<%= meeting.id %>/people/<%= person.id %>/delete"><i class="fas fa-times-circle"></i></a>
+              </p>
             <% }) %>
             
           </div>

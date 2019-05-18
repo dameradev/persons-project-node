@@ -55,3 +55,11 @@ exports.postCreateMeeting = (req, res, next) => {
   .catch(err=>console.log(err));
   
 }
+
+exports.removePerson = async (req, res, next) => {
+  const meeting = await Meeting.findByPk(req.params.meetingId);
+  const person = await Person.findByPk(req.params.personId)
+  
+  await meeting.removePerson(person);
+  res.redirect(`/meetings/${meeting.id}`)
+}

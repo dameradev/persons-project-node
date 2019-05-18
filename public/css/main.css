@@ -23,6 +23,19 @@
   }
 }
 
+.meeting-cart-person a{
+  color:white;
+  text-decoration: none;
+}
+
+/* .meeting-cart-person .close-btn {
+  position: absolute;
+  bottom: 13px;
+  left:10px;
+  margin: 0;
+  padding: 0;
+} */
+
 /* .meeting-details-card {
   margin-top:3rem;
 } */
