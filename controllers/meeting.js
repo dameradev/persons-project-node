@@ -1,5 +1,6 @@
 const Meeting = require('../models/meeting');
 const Person = require('../models/person');
+const Location = require('../models/location');
 
 exports.getMeetings = async (req, res, next) => {
   const meetings = await Meeting.findAll({});
@@ -14,13 +15,15 @@ exports.getMeeting = async (req, res, next) => {
   const meeting = await Meeting.findByPk(req.params.id);
   const persons = await Person.findAll({});
   const peopleAttending = await meeting.getPeople();
-  
+  const location = await Location.findByPk(meeting.locationId);
+  console.log('LOCATION:', location);
   res.render('meetings/meeting-details', {
     pageTitle: 'Meeting - Details',
     path: '/meetings',
     meeting,
     persons,
-    peopleAttending
+    peopleAttending,
+    location
   });
 }
 
@@ -32,10 +35,12 @@ exports.postAddPerson = async (req, res, next) => {
   res.redirect(`/meetings/${meeting.id}`)
 }
 
-exports.getCreateMeeting = (req, res, next) => {
+exports.getCreateMeeting = async (req, res, next) => {
+  const locations = await Location.findAll({});
   res.render('meetings/create-meeting', {
     pageTitle:'Create a meeting',
-    path: '/create-meeting'
+    path: '/create-meeting',
+    locations
   })
 }
 
@@ -43,10 +48,12 @@ exports.postCreateMeeting = (req, res, next) => {
   const start = req.body.start;
   const duration = req.body.duration;
   const description = req.body.description;
+  const locationId = req.body.locationId;
   Meeting.create({
     start,
     duration,
-    description
+    description,
+    locationId
   })
   .then(result => {
     console.log('Created a meeting');
