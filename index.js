@@ -45,17 +45,17 @@ Person.belongsToMany(Meeting, { through: PersonMeeting });
 
 sequalize.sync()
   .then(() => { 
-    return Location.findByPk(1);
+    return Location.findOne({where: {street_name: 'Broadway'}});
    })
    .then(location => {
      if (!location) {
        Location.create({
-         city: 'Brno',
-         street_name: 'Kohutova',
-         street_number: '3',
+         city: 'New York',
+         street_name: 'Broadway',
+         street_number: '6',
          zip: '60014',
-         country: 'Czezh Republic',
-         name: 'Dormitory',
+         country: 'USA',
+         name: 'Theater',
          latitude: '49.216080',
          longitude: '16.631370',
        });
