@@ -7,9 +7,20 @@
           <h1>Create a contact for <%= person.first_name %> <%= person.last_name%></h1>
           <form action="/persons/<%=person.id%>/create-contact" method="POST">
               <div class="form-group">
-                  <label for="contact">Name of contact:</label>
+                  <label for="contact">Details of contact:</label>
                   <input type="text" name="contact" id="contact" class="form-control">
               </div>
+
+              <label for="contact_type">Choose a Contact Type</label>
+          
+              <select class="form-control" id="contact_type" name="ctId">
+                <% contactTypes.forEach(ct => { %>
+                  <option value="<%= ct.id %>">
+                      <%= ct.name %>
+                  </option>
+                <% }) %>
+              </select>
+          
             <button type="submit" class="btn btn-primary create-person-button">Create a Contact</button>
           </form>
       </div>

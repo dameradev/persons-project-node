@@ -24,7 +24,10 @@
         <a class="btn btn-success" >Edit</a>
       </div>
       <div class="card-footer text-muted">
-        <!-- to do: display contacts -->
+        <h4 class="font-italic">Contact INFORMATION</h4>
+        <% contacts.forEach(contact=> { %>
+          <p> <%= contactTypes[contact.contactTypeId-1].name %>: <%= contact.contact %> </p>
+        <% }) %>
       </div>
     </div>
   </div>

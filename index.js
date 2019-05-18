@@ -9,6 +9,7 @@ const app = express();
 const Person = require('./models/person');
 const Location = require('./models/location');
 const Contact = require('./models/contact');
+const ContactType = require('./models/contact_type');
 const Meeting = require('./models/meeting');
 const PersonMeeting = require('./models/person_meeting');
 
@@ -34,6 +35,9 @@ Location.hasMany(Person);
 
 Contact.belongsTo(Person);
 Person.hasMany(Contact);
+
+Contact.belongsTo(ContactType);
+ContactType.hasMany(Contact);
 
 Meeting.belongsTo(Location);
 Location.hasMany(Meeting);
