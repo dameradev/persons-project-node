@@ -10,11 +10,11 @@
             Meeting Details
           </div>
           
-          <div class="card-body">
+          <div class="card-body card-green">
             <h5 class="card-title"><%= meeting.description %></h5>
             <p class="card-text">Starting time: <%= meeting.start.getDate() %>.<%= meeting.start.getMonth() %>.<%= meeting.start.getFullYear() %> at <%= meeting.start.getHours() %>h </p>
             <p class="card-text">Duration: <%= meeting.duration %></p>
-            <p class="card-text">Location: <%= location.city%>, <%= location.country %></p>
+            <p class="card-text font-italic">Location: <%= location.city%>, <%= location.country %></p>
             <h3>People attending the event</h3>
             <% peopleAttending.forEach(person => { %>
               <p class='card-text badge badge-secondary meeting-cart-person'>

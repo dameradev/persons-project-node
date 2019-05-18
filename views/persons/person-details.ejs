@@ -11,9 +11,9 @@
         Person Details
       </div>
       
-      <div class="card-body">
+      <div class="card-body card-green">
         <h5 class="card-title"><%= person.first_name %> <%= person.last_name %></h5>
-        <p class="card-text">Nickname: <%= person.nickname %></p>
+        <p class="card-text font-italic">Nickname: <%= person.nickname %></p>
         <p class="card-text">Birthday: <%= person.birth_day.getDate() %>.<%= person.birth_day.getMonth() %>.<%= person.birth_day.getFullYear() %></p>
         <p class="card-text">Height: <%= person.height %></p>
         <p class="card-text">Location: <%= location.country %></p>

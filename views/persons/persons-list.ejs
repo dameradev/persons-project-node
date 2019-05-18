@@ -10,10 +10,10 @@
     <% persons.forEach(person => { %>
       
           <div class="col-sm card-wrapper">
-            <div class="card" style="width: 18rem;">
+            <div class="card card-green" style="width: 18rem;">
                 <div class="card-body">
                   <h5 class="card-title"> <%= person.first_name %> <%= person.last_name %> </h5>
-                  <h6 class="card-subtitle mb-2 text-muted">nickname: <%= person.nickname %></h6>
+                  <h6 class="card-subtitle mb-2 text-muted font-italic">nickname: <%= person.nickname %></h6>
         
                   <p class="card-text">Birthday: <%= person.birth_day.getDate() %>.<%= person.birth_day.getMonth() %>.<%= person.birth_day.getYear() +1900 %></p>
                   <p class="card-text">Height: <%= person.height %></p>

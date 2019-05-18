@@ -6,6 +6,10 @@
   margin-right:1rem;
 }
 
+.card-green {
+  background: rgba(17, 207, 43, 0.2); 
+  
+}
 
 .card-wrapper {
   margin-top: 1rem;
