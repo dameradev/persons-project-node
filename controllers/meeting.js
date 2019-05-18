@@ -17,7 +17,7 @@ exports.getMeeting = async (req, res, next) => {
   
   res.render('meetings/meeting-details', {
     pageTitle: 'Meeting - Details',
-    path: 'meetings',
+    path: '/meetings',
     meeting,
     persons,
     peopleAttending

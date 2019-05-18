@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark container-fluid navigation-bar">
   <div class="container">
-    <a class="navbar-brand" href="/persons">List of Persons</a>
+    <a class="navbar-brand <%= path === '/persons' ? 'active' : '' %>" href="/persons">List of Persons</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -8,13 +8,13 @@
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
      <ul class="navbar-nav ml-auto">
       <li class="nav-item list-item">
-        <a class="nav-link" href="/meetings">List of meetings</a>
+        <a class="nav-link <%= path === '/meetings' ? 'active' : '' %>" href="/meetings">List of meetings</a>
       </li>
         <li class="nav-item">
-          <a class="btn btn-outline-success my-2 my-sm-0 action-btn" href="/meetings/create-meeting">Create a Meeting</a>
+          <a class="btn btn-outline-success my-2 my-sm-0 action-btn <%= path === '/create-meeting' ? 'active' : '' %>" href="/meetings/create-meeting">Create a Meeting</a>
         </li>
         <li class="nav-item">
-          <a class="btn btn-outline-success my-2 my-sm-0 action-btn" href="/persons/create-person">Create a Person</a>
+          <a class="btn btn-outline-success my-2 my-sm-0 action-btn <%= path === '/create-person' ? 'active' : '' %>" href="/persons/create-person">Create a Person</a>
         </li>
      </ul>
     </div>
